@@ -192,7 +192,6 @@ axios({
         itemViewMore.textContent = restaurant.Name + " Reviews";
         cardContainer.appendChild(card);
     })
-    //$('.d-each-post')[0].remove();    
 });
 
 
