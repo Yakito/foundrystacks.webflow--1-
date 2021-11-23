@@ -11,7 +11,7 @@ axios.get("https://baserow-sendero.herokuapp.com/api/database/rows/table/83/?use
     //for each of the response data, create a new grid element and put it isinde d-featuredstacks
     response.data.results.forEach(data => {
         var gridElement = featuredstacks.querySelector(".d-featured-each").cloneNode(true);
-        gridElement.querySelector(".featured-title").innerHTML = data.Name;
+        gridElement.querySelector(".featured-titles").innerHTML = data.Name;
         gridElement.querySelector(".featuredstack-description").innerHTML = data.Description;
         //set background image of d-each-stack-f-img to the response image
         gridElement.querySelector(".d-each-stack-f-img").style.backgroundImage = "url(" + data.Image + ")";
