@@ -233,5 +233,6 @@ axios({
   })
   //delete element with class "skelet"
   $('.skelet').remove();
+  //end comment
 
   })
