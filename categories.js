@@ -1,3 +1,33 @@
+//get featured stacks
+//make axios request with authorization header
+axios.get("https://baserow-sendero.herokuapp.com/api/database/rows/table/83/?user_field_names=true&size=3&featured=true", {
+    headers: {
+        Authorization: "Token 9iB7W4m6msWKTeTjfDQ8ey9AUipxjPqc"
+    }
+    //handle success
+}).then(function (response) {
+    //get the element with d-featuredstacks
+    var featuredstacks = document.getElementById("featuredstacks");
+    //for each of the response data, create a new grid element and put it isinde d-featuredstacks
+    response.data.results.forEach(data => {
+        var gridElement = featuredstacks.querySelector(".d-featured-each").cloneNode(true);
+        gridElement.querySelector(".featuredstack-name").innerHTML = data.Name;
+        gridElement.querySelector(".featuredstack-description").innerHTML = data.Description;
+        //set background image of d-each-stack-f-img to the response image
+        gridElement.querySelector(".d-each-stack-f-img").style.backgroundImage = "url(" + data.Image + ")";
+
+        //append the grid element to the featuredstacks element
+        featuredstacks.appendChild(gridElement);
+    });
+});
+
+
+
+
+        
+
+
+
 //filter stacks
         //create axios get request with authoization header
         axios.get('https://baserow-sendero.herokuapp.com/api/database/rows/table/89/?user_field_names=true', {
