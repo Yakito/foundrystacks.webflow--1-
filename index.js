@@ -163,7 +163,7 @@ axios({
 //
 axios({
     method: "GET",
-    url: "https://baserow-sendero.herokuapp.com/api/database/rows/table/78/?filter__field_510__boolean=true&user_field_names=true&size=6",
+    url: "https://baserow-sendero.herokuapp.com/api/database/rows/table/78/?filter__field_510__boolean=true&user_field_names=true",
     headers: {
         Authorization: "Token 9iB7W4m6msWKTeTjfDQ8ey9AUipxjPqc"
     }
