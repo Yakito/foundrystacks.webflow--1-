@@ -57,45 +57,45 @@ axios({
 
 
 
-//
-// GET LIST OF REVIEWS
-//
-axios({
-    method: "GET",
-    url: "https://baserow-sendero.herokuapp.com/api/database/rows/table/82/?user_field_names=true&size=5",
-    headers: {
-        Authorization: "Token 9iB7W4m6msWKTeTjfDQ8ey9AUipxjPqc"
-    }
-}).then(function (response) {
-    // console.log(response);
-    let newdata = response.data.results;
-    // console.log(newdata);
-    const reviewContainer = document.getElementById("review-container")
-    newdata.forEach(restaurant => {
-        const style = document.getElementById('each-review')
-        const card = style.cloneNode(true)
-        console.log("here");
-        console.log(restaurant.link);
-        card.style.display = 'block';
+// //
+// // GET LIST OF REVIEWS
+// //
+// axios({
+//     method: "GET",
+//     url: "https://baserow-sendero.herokuapp.com/api/database/rows/table/82/?user_field_names=true&size=5",
+//     headers: {
+//         Authorization: "Token 9iB7W4m6msWKTeTjfDQ8ey9AUipxjPqc"
+//     }
+// }).then(function (response) {
+//     // console.log(response);
+//     let newdata = response.data.results;
+//     // console.log(newdata);
+//     const reviewContainer = document.getElementById("review-container")
+//     newdata.forEach(restaurant => {
+//         const style = document.getElementById('each-review')
+//         const card = style.cloneNode(true)
+//         console.log("here");
+//         console.log(restaurant.link);
+//         card.style.display = 'block';
 
 
 
-        //inside each-review create a blockquote with class "twitter-tweet"
-        const blockquote = document.createElement('blockquote');
-        blockquote.className = "twitter-tweet";
-        //put it inside "each-review"
-        card.appendChild(blockquote);
-        //inside blockquote create a link pointing to the tweet
-        //grab html from database
-        const html = restaurant.html;
-        //append it to blockquote
-        blockquote.innerHTML = html;
+//         //inside each-review create a blockquote with class "twitter-tweet"
+//         const blockquote = document.createElement('blockquote');
+//         blockquote.className = "twitter-tweet";
+//         //put it inside "each-review"
+//         card.appendChild(blockquote);
+//         //inside blockquote create a link pointing to the tweet
+//         //grab html from database
+//         const html = restaurant.html;
+//         //append it to blockquote
+//         blockquote.innerHTML = html;
 
-        reviewContainer.appendChild(blockquote);
+//         reviewContainer.appendChild(blockquote);
 
-    })
+//     })
 
-});
+// });
 
 
 //get cats
