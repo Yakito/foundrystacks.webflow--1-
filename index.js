@@ -161,13 +161,10 @@ axios({
 //
 axios({
     method: "GET",
-    url: "https://baserow-sendero.herokuapp.com/api/database/rows/table/78/?filter__field_510__boolean=true&user_field_names=true&size=6",
-    headers: {
-        Authorization: "Token 9iB7W4m6msWKTeTjfDQ8ey9AUipxjPqc"
-    }
+    url: "http://149.28.79.42:8055/items/fs_tools"
 }).then(function (response) {
     // console.log(response);
-    let newdata = response.data.results;
+    let newdata = response.data;
     // console.log(newdata);
     const cardContainer = document.getElementById("Cards-Container")
     newdata.forEach(restaurant => {
@@ -179,15 +176,15 @@ axios({
             document.location.href = "/tool?id=" + restaurant.id;
         });
         const h3 = card.getElementsByTagName('H3')[0]
-        h3.textContent = restaurant.Name;
+        h3.textContent = restaurant.name;
         const itemDesc = card.getElementsByClassName('t-general')[1]
-        itemDesc.textContent = restaurant.Description;
+        itemDesc.textContent = restaurant.description;
         const itemType = card.getElementsByClassName('tool-type')[0]
-        itemType.textContent = restaurant.Category;
+        itemType.textContent = restaurant.category;
         const itemImage = card.getElementsByClassName('d-company-logo')[0]
-        itemImage.style.backgroundImage = "url(" + restaurant.Image + ")";
+        itemImage.style.backgroundImage = "url(" + restaurant.image + ")";
         const itemViewMore = card.getElementsByClassName('t-general')[2]
-        itemViewMore.textContent = restaurant.Name + " Reviews";
+        itemViewMore.textContent = restaurant.name + " Reviews";
         cardContainer.appendChild(card);
     })
 });
