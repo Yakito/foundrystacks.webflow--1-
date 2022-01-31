@@ -177,7 +177,7 @@ axios({
             document.location.href = "/tool?id=" + restaurant.id;
         });
         const h3 = card.getElementsByTagName('H3')[0]
-        h3.textContent = "testing"+restaurant.name;
+        h3.textContent = "testing" + restaurant.name;
         const itemDesc = card.getElementsByClassName('t-general')[1]
         itemDesc.textContent = restaurant.description;
         const itemType = card.getElementsByClassName('tool-type')[0]
